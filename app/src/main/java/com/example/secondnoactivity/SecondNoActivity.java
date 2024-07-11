@@ -13,17 +13,17 @@ import java.util.Random;
 
 public class SecondNoActivity extends AppCompatActivity {
     private String total = "hello";
-    public static int generateRandomNumber() {
-        // 创建 Random 对象
-        Random random = new Random();
-
-        // 生成在[min, max]范围内的随机整数
-        return random.nextInt(100);
-    }
+//    public static int generateRandomNumber() {
+//        // 创建 Random 对象
+//        Random random = new Random();
+//
+//        // 生成在[min, max]范围内的随机整数
+//        return random.nextInt(100);
+//    }
     public static int generateRandomNumber(String tempString) {
         // 创建 Random 对象
         Random random = new Random();
-
+        Log.d("one","generateNumber!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         // 生成在[min, max]范围内的随机整数
         return random.nextInt(Integer.parseInt(tempString));
     }
@@ -33,6 +33,10 @@ public class SecondNoActivity extends AppCompatActivity {
     public void secret(){
         Log.d("two","jinlaile_two");
         total += "_secret";
+    }
+    public static int add(String a, String b) {
+        int total = Integer.valueOf(a) + Integer.valueOf(b);
+        return total;
     }
 
     @Override
@@ -44,7 +48,7 @@ public class SecondNoActivity extends AppCompatActivity {
         bt_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(String.valueOf(generateRandomNumber()));
+                textView.setText(String.valueOf(generateRandomNumber("300")));
             }
         });
 
